@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your car rental booking.">
+    <title>Book Vehicle - Rentals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <span>Rentals</span>
+                </a>
+                <ul class="nav-links">
+                    <!-- Populated by app.js -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container booking-section">
+        <h2>Complete Your Booking</h2>
+        <br>
+        
+        <div class="booking-container">
+            <!-- Form Section -->
+            <div class="booking-form-card">
+                <h3>Reservation Details</h3>
+                <br>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="location">Pickup / Return Location</label>
+                        <select id="location" class="form-control" required>
+                            <option value="airport">International Airport Terminal 1</option>
+                            <option value="downtown">Downtown Metro Station</option>
+                            <option value="suburb">Northside Suburb Office</option>
+                        </select>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="drop-date">Drop-off Date</label>
+                            <input type="date" id="drop-date" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" readonly style="opacity: 0.7;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" readonly style="opacity: 0.7;">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Booking</button>
+                </form>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="booking-summary-card">
+                <h3>Summary</h3>
+                <br>
+                
+                <div class="summary-car">
+                    <img id="summary-img" src="" alt="Car">
+                    <div>
+                        <h4 id="summary-name">Loading...</h4>
+                        <p id="summary-price" style="color: var(--primary-color); font-weight: 600;">$0.00 / day</p>
+                    </div>
+                </div>
+
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Duration</span>
+                        <span id="summary-days">0 Days</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Taxes & Fees</span>
+                        <span>Included</span>
+                    </div>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total Cost</span>
+                    <span id="summary-total" style="color: var(--primary-color);">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <p>&copy; 2026 Rentals Premium Car Hire. All rights reserved.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <a href="terms.html" style="color: var(--text-muted); font-size: 0.875rem;">Terms of Use</a>
+                <a href="privacy.html" style="color: var(--text-muted); font-size: 0.875rem;">Privacy Policy</a>
+                <a href="contact.html" style="color: var(--text-muted); font-size: 0.875rem;">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h3>Booking Confirmed!</h3>
+            <p style="margin: 1rem 0; color: var(--text-muted);">Your reservation has been saved locally.</p>
+            <a href="index.html" class="btn btn-primary btn-block">Return to Home</a>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

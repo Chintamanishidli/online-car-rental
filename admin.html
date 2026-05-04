@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard.">
+    <title>Admin Dashboard - Rentals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <span>Rentals</span>
+                </a>
+                <ul class="nav-links">
+                    <!-- Populated by app.js -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container profile-section" id="admin-container">
+        <h2>Admin Dashboard</h2>
+        <br>
+        
+        <div class="profile-container">
+            <!-- Sidebar -->
+            <div class="profile-sidebar">
+                <div class="profile-nav">
+                    <div class="profile-nav-item active" id="nav-overview">📊 Overview</div>
+                    <div class="profile-nav-item" id="nav-fleet">🚘 Manage Fleet</div>
+                    <div class="profile-nav-item" id="nav-bookings">📑 All Bookings</div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="profile-content">
+                
+                <!-- Overview View -->
+                <div id="view-overview">
+                    <h3>Platform Overview</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Quick statistics of your car rental platform.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Total Users</h3>
+                            <div class="stat-value" id="stat-users">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Total Cars</h3>
+                            <div class="stat-value" id="stat-cars">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Total Bookings</h3>
+                            <div class="stat-value" id="stat-bookings">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Fleet View -->
+                <div id="view-fleet" class="hidden">
+                    <h3>Manage Fleet</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Add new cars or remove existing ones from the catalog.</p>
+                    
+                    <div style="background-color: var(--bg-color); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Add New Car</h4>
+                        <form id="add-car-form">
+                            <div style="display: flex; gap: 1rem;">
+                                <div class="form-group" style="flex: 2;">
+                                    <label>Car Name</label>
+                                    <input type="text" id="car-name" class="form-control" required placeholder="e.g. Ford Mustang">
+                                </div>
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Type</label>
+                                    <select class="form-control" id="car-type" required>
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="SUV">SUV</option>
+                                        <option value="VAN">VAN</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Price / Day ($)</label>
+                                    <input type="number" id="car-price" class="form-control" required min="1" placeholder="100">
+                                </div>
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Seats</label>
+                                    <input type="number" id="car-seats" class="form-control" required min="2" max="15" placeholder="4">
+                                </div>
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Transmission</label>
+                                    <select id="car-transmission" class="form-control" required>
+                                        <option value="Auto">Auto</option>
+                                        <option value="Manual">Manual</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Image URL (Optional)</label>
+                                <input type="text" id="car-image" class="form-control" placeholder="images/suv.png">
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Add to Fleet</button>
+                        </form>
+                    </div>
+
+                    <h4 style="margin-bottom: 1rem;">Current Fleet</h4>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Price/Day</th>
+                                    <th>Features</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fleet-tbody">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Manage Bookings View -->
+                <div id="view-bookings" class="hidden">
+                    <h3>All Bookings</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">View all reservations made by users.</p>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>User Email</th>
+                                    <th>Car</th>
+                                    <th>Dates</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-tbody">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <p>&copy; 2026 Rentals Premium Car Hire. All rights reserved.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <a href="terms.html" style="color: var(--text-muted); font-size: 0.875rem;">Terms of Use</a>
+                <a href="privacy.html" style="color: var(--text-muted); font-size: 0.875rem;">Privacy Policy</a>
+                <a href="contact.html" style="color: var(--text-muted); font-size: 0.875rem;">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

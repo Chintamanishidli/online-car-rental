@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login or register for an account.">
+    <title>Login - Rentals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <span>Rentals</span>
+                </a>
+                <ul class="nav-links">
+                    <!-- Populated by app.js -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container auth-section">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="tab-login">Sign In</div>
+                <div class="auth-tab" id="tab-register">Register</div>
+            </div>
+
+            <!-- Login View -->
+            <div id="view-login">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                </form>
+            </div>
+
+            <!-- Register View -->
+            <div id="view-register" class="hidden">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <p>&copy; 2026 Rentals Premium Car Hire. All rights reserved.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <a href="terms.html" style="color: var(--text-muted); font-size: 0.875rem;">Terms of Use</a>
+                <a href="privacy.html" style="color: var(--text-muted); font-size: 0.875rem;">Privacy Policy</a>
+                <a href="contact.html" style="color: var(--text-muted); font-size: 0.875rem;">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
