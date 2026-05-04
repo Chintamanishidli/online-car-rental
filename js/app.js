@@ -42,7 +42,6 @@ const updateNavigation = () => {
   let html = `
     <li><a href="index.html" class="${path.includes('index.html') || path === '/' ? 'active' : ''}">Home</a></li>
     <li><a href="cars.html" class="${path.includes('cars.html') ? 'active' : ''}">Fleet</a></li>
-    <li><a href="list-car.html" class="${path.includes('list-car.html') ? 'active' : ''}">List Your Car</a></li>
     <li><a href="contact.html" class="${path.includes('contact.html') ? 'active' : ''}">Contact</a></li>
   `;
 
